@@ -1,0 +1,17 @@
+{
+    "name": "bilal/09_composer",
+    "autoload": {
+        "psr-4": {
+            "Bilal\\Testing\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bilal Naeem",
+            "email": "119736324+Bilal-Naeem12@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.9"
+    }
+}

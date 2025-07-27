@@ -1,0 +1,46 @@
+# Composer dependencies
+/vendor/
+
+# Composer lock file (optional, but usually keep this tracked)
+# /composer.lock
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE or Editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# PHPStorm
+*.iml
+
+# Cache and logs
+/cache/
+*.log
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# PHPUnit
+/phpunit.xml
+/phpunit.xml.dist
+/.phpunit.result.cache
+
+# Node (if you use npm/yarn with Laravel Mix or Vue)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build or dist files
+/public/hot
+/public/storage
+/storage/*.key
+
+# Laravel specific (if using Laravel)
+bootstrap/cache/*
+storage/*.key
