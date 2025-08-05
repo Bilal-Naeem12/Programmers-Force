@@ -11,7 +11,12 @@ use App\Http\Controllers\CourseController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::post('/logout', function (Request $request) {
+    Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+    return redirect('/');
+})->name('logout');
 // Testable simple routes without auth for now
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/students', [StudentController::class, 'index'])->name('students.index');
