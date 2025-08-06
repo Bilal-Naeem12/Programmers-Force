@@ -1,6 +1,4 @@
-@extends('layouts.app')
-@section('title', 'Courses')
-
+<x-app-layout>
 @section('content')
 <h2 class="text-xl font-bold mb-4">Course List</h2>
 
@@ -28,4 +26,5 @@
         @endforelse
     </tbody>
 </table>
-@endsection
+
+</x-app-layout>

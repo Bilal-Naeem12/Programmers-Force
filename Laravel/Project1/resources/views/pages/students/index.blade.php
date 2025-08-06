@@ -1,6 +1,4 @@
-@extends('layouts.app')
-@section('title', 'Students')
-
+<x-app-layout>
 @section('content')
 <h2 class="text-xl font-bold mb-4">Student List</h2>
 <table class="table-auto w-full bg-white shadow">
@@ -19,4 +17,6 @@
     @endforeach
   </tbody>
 </table>
-@endsection
+
+
+</x-app-layout>

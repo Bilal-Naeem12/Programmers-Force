@@ -1,6 +1,5 @@
 <x-app-layout>
     <x-slot name="header">
-@section('content')
 <h2 class="text-2xl font-bold mb-4">Dashboard Overview</h2>
 
 <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -19,5 +18,4 @@
         <p class="text-3xl font-bold mt-2">{{ $courseCount }}</p>
     </div>
 </div>
-
 </x-app-layout>

@@ -16,6 +16,6 @@ class DashboardController extends Controller
     $teacherCount = Teacher::count();
     $courseCount = Course::count();
 
-    return view('pages.dashboard', compact('studentCount', 'teacherCount', 'courseCount'));
+    return view('dashboard', compact('studentCount', 'teacherCount', 'courseCount'));
     }
 }

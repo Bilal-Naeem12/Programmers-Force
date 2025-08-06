@@ -1,25 +1,31 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CourseController;
+use Illuminate\Support\Facades\Route;
 
-// Landing page
 Route::get('/', function () {
     return view('welcome');
 });
-Route::post('/logout', function (Request $request) {
-    Auth::logout();
-    $request->session()->invalidate();
-    $request->session()->regenerateToken();
-    return redirect('/');
-})->name('logout');
-// Testable simple routes without auth for now
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/dashboard', [DashboardController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+
+
 Route::get('/students', [StudentController::class, 'index'])->name('students.index');
 Route::get('/teachers', [TeacherController::class, 'index'])->name('teachers.index');
 Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+
+
+
+
+require __DIR__.'/auth.php';
