@@ -21,4 +21,14 @@ class Teacher extends Model
     {
         return $this->hasMany(Assignment::class);
     }
+
+
+
+
+
+    public function user()
+{
+    return $this->morphOne(User::class, 'userable');
+}
+
 }
